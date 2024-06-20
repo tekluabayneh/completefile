@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --accent-color: orangered;
+        --backgroung-color: white;
+        --text-color: black;
+        --button-text-color: var(--backgroung-color);
+        --trnsition-delay: 1s;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100dvh;
+        margin: 0;
+        background-color: var(--backgroung-color);
+        color: var(--text-color);
+        transition: 0.3s;
+        overflow: hidden;
+      }
+
+      .Dark {
+        --accent-color: yellow;
+        --backgroung-color: #333;
+        --text-color: rgb(249, 249, 249);
+         background: #000;
+      }
+      .theme-toggle-btn {
+        background-color: var(--accent-color);
+        color: var(--button-text-color);
+        display: flex;
+        cursor: pointer;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        transition: var(--trnsition-delay);
+        transform: scale(1);
+      }
+
+      .theme-toggle-btn:hover,
+      .theme-toggle-btn:focus {
+        transform: scale(1.1);
+      }
+      .sun-moon-container {
+        position: absolute;
+        pointer-events: none;
+        top: 1px;
+        height: 200vmin;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .Dark .sun-moon-container {
+        transform: rotate(180deg);
+      }
+      .sun,
+      .moon {
+        position: absolute;
+        transition: opacity var(--trnsition-delay);
+      }
+      .sun {
+        top: 5%;
+      }
+      .Dark .sun {
+        opacity: 0;
+      }
+      .moon {
+        bottom: 5%;
+        opacity: 0;
+      }
+
+      Dark .moon {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="Dark">
+    <div class="row">
+      <h2>Theme Swapper</h2>
+      <button class="w-25 bg-primary rounded theme-toggle-btn icon">
+        Swap Theme
+      </button>
+
+      <div class="sun-moon-container">
+        <h3 class="moon">MOON-ICON</h3>
+        <h3 class="sun">SUN-ICON</h3>
+      </div>
+    </div>
+    <script src="theme.js"></script>
+   
+  </body>
+</html>

@@ -1,0 +1,64 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+}
+#gameBored {
+  width: 300px;
+  height: 300px;
+  background: #000;
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 1px black;
+}
+
+.Square {
+  width: 100px;
+  height: 100px;
+  background: #ffffff;
+  border: solid 2px black;
+  color: rgb(0, 0, 0);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: solid 10px rgb(34, 0, 255);
+  box-sizing: border-box;
+}
+.Cross {
+  width: 90px;
+  height: 90px;
+
+  position: relative;
+}
+.Cross::after,
+.Cross::before {
+  content: "";
+  position: absolute;
+  background: red;
+  transform: rotate(45deg);
+}
+.Cross::before {
+  left: 50%;
+  width: 30%;
+  height: 100%;
+
+  margin-left: -15%;
+}
+.Cross::after {
+  top: 50%;
+  height: 30%;
+  width: 100%;
+  margin-top: -15%;
+}

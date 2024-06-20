@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="index.js" defer></script>
+    <title>Document</title>
+    <style>
+      [data-tab-content] {
+        display: none;
+      }
+
+      .active[data-tab-content] {
+        display: block;
+      }
+      .Tabs {
+        width: 100vw;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 2rem;
+        cursor: pointer;
+        list-style: none;
+        padding: 1rem;
+        border-bottom: 1px solid black;
+      }
+
+      .tab.active {
+        background-color: #aaa;
+      }
+      .tab:hover {
+        background: #7e7e7e;
+      }
+
+      .tabs-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="Tabs">
+      <li class="mytab" data-tab-target="#Home">Home</li>
+      <li class="mytab" data-tab-target="#prcing">prcing</li>
+      <li class="mytab" data-tab-target="#about">about</li>
+    </ul>
+
+    <div class="tabs-content">
+      <div id="Home" data-tab-content class="active">
+        <h1>Home</h1>
+        <p>thios is the home</p>
+      </div>
+
+      <div id="prcing" data-tab-content>
+        <h1>prcing</h1>
+        <p>thios is the home</p>
+      </div>
+
+      <div id="about" data-tab-content>
+        <h1>about</h1>
+        <p>thios is the home</p>
+      </div>
+    </div>
+  </body>
+</html>

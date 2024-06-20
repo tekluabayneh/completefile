@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="index.js" defer></script>
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      /* :root {
+        --strength: 10%;
+      } */
+      body {
+        background-color: hsl(261, 88%, 17%);
+        color: hsl(261, 88%, 90%);
+        text-align: center;
+      }
+      .strengh-mather {
+        height: 2rem;
+        width: 90%;
+        border: 3px solid hsl(261, 88%, 57%);
+        border-radius: 1rem;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #strengh-meter::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: calc(1% + var(--strength, 0));
+        background-color: hsl(261, 88%, 57%);
+        transition: width 200ms;
+      }
+
+      .password-input {
+        width: 90%;
+        padding: 0.25rem 0.75rem;
+        background-color: inherit;
+        color: #fff;
+        border-radius: 0.25rem;
+        margin-top: 0.76rem;
+        outline: none;
+        text-align: center;
+      }
+      .password-input:focus {
+        border: 1px solid white;
+      }
+      .resons {
+        margin-top: 0.25rem;
+        color: hsl(261, 88%, 87%);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Password Strnght Test</h1>
+
+    <div class="strengh-mather" id="strengh-meter"></div>
+
+    <input
+      class="password-input"
+      type="text"
+      autofocus
+      aria-labelledby="Password"
+      id="password-input"
+      placeholder="password"
+    />
+
+    <div class="resons" id="resons">
+      <!-- <div>REsons 1</div>
+      <div>REsons 2</div> -->
+    </div>
+  </body>
+</html>
